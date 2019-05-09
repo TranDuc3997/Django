@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="jum.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+    
+    /* Remove the jumbotron's default bottom margin */ 
+     .jumbotron {
+      margin-bottom: 0;
+    }
+   
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+  </style>
+</head>
+<body>
+<div class="logo">
+  <img src="hinhanh/logo7.jpg">
+</div>
+<div id="myCarousel" class="carousel slide" data-ride="carousel" >
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+  
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="hinhanh/parnerchinhthuc3a.jpg" alt="" style="width: 1087px">
+    </div>
+
+    <div class="item">
+      <img src="hinhanh/panner1chinhthuc.jpg" alt=""style="width: 1078px">
+    </div>
+
+    <div class="item">
+      <img src="hinhanh/parnerchinhthucso2.jpg" alt=""style="width: 1078px">
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<nav class="navbar navbar-inverse" style=">
+  <div class="container-fluid">
+    <div class="navbar-header" >
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+  <!--     <a class="navbar-brand" href="#">Tìm Hiểu</style></a> -->
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="form_trang_chu.html">Trang chủ</a></li>
+        <li><a href="form_gioithieu.html">Giới Thiệu</a></li>
+        <li><a href="form_sanpham.html">Sản Phẩm</a></li>
+        <li><a href="form_tintuc.html">Tin Tức</a></li>
+        <li><a href="form_lien_he.html">Liên Hệ</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="form_tai_khoan.html"><span class="glyphicon glyphicon-user"></span> Tài Khoản Của Bạn</a></li>
+        <li><a href="form_giohang.html"><span class="glyphicon glyphicon-shopping-cart"></span> Giỏ hàng</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid" >
+  <div class="row content" >
+    <div class="col-sm-3 sidenav" >
+      <!-- <h4>John's Blog</h4> -->
+       <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="#section1">Danh Mục Sản Phẩm</a></li>
+     <!-- load danh sach -->
+     <li class="dropdown" ">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#section2">Áo Thời Trang Nam
+    <span class="caret"></span></a>
+    <ul class="dropdown-menu" style="font-size: 15px;">
+      <!-- kết nối -->
+      <li><a href="aosominam.html">Áo Sơ Mi Nam</a></li>
+      <li><a href="aothunnam.html">Áo Thun Nam</a></li>
+      <!-- kết nối -->
+    </ul>
+  </li>
+        <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#section2">Áo Thời Trang Nữ
+    <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+      <li><a href="aosominu.html">Áo Sơ Mi Nữ</a></li>
+      <li><a href="aothunnu.html">Áo Thun Nữ</a></li>
+      <li><a href="damnu.html">Đầm Nữ</a></li>
+      <li><a href="dobonu.html">Đồ Bộ</a></li>
+      <li><a href="#"></a></li> 
+    </ul>
+  </li>
+        <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#section2">Quần Thời Trang Nam
+    <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+      <li><a href="quanjeannam.html">Quần Jeam Nam</a></li>
+      <li><a href="quanshortnam.html">Quần Short Nam</a></li>
+      <li><a href="#"></a></li> 
+    </ul>
+  </li>
+            <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#section2">Quần Thời Trang Nữ
+    <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+      <li><a href="vaycongso.html">Váy Công Sở</a></li>
+      <li><a href="quanjeamnu.html">Quần Jeam Nữ</a></li>
+      <li><a href="#"></a></li> 
+    </ul>
+  </li>
+      </ul><br>
+      <div class="input-group" style="width:200px;">
+        <input type="text" class="form-control" placeholder="Search Blog.." >
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+      </div>
+
+    </div>
+    <!-- dong1 -->
+
+      <div class="row">
+    <div class="container-fluid bg-3 text-center">   
+    <div class="col-sm-8 text-danger" >   
+  <div class="alert alert-info" style="padding-right: 600px; background-color:#BBDEFB;color: #000">
+    <strong style="font-size: 20px;">SẢN PHẨM MỚI NHẤT</strong>
+  </div>
+<!-- dòng 1 -->
+
+
+
+  <div class="col-sm-4" > 
+        <div class="card" style="width:250px;">
+          <div class="card-img-top">
+      <img src="hinhanhxemchitiet/dobo.jpg" alt="Card One" class="card-img-top" style="width:265px; height:350px; alt="Image" >
+    </div>
+  </div>
+      <p></p>
+      <strong style="padding-right:50px;">Đồ Bộ</strong>
+      <p></p>
+          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">XEM CHI TIẾT <span class="glyphicon glyphicon-eye-open"></span></button>
+
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+
+      <!-- Mở đầu nội dung của xem chi tiết-->
+        
+      <!-- kết thúc -->
+      </div>
+
+    </div>
+  </div>
+<!-- giỏ hàng -->
+         <a href="form_giohang.html"> <button type="button" class="btn btn-danger">THÊM VÀO <span class="glyphicon glyphicon-shopping-cart" ></span></button> </a>
+          <p></p>
+    </div>
+
+
+
+
+
+<!-- dòng hai -->
+      <div class="col-sm-4" > 
+        <div class="card" style="width:250px;">
+          <div class="card-img-top">
+      <img src="hinhanhxemchitiet/dobo1.jpg" alt="Card One" class="card-img-top" style="width:265px; height:350px; alt="Image" >
+    </div>
+  </div>
+      <p></p>
+      <strong style="padding-right:50px;">Đồ Bộ A1</strong>
+      <p></p>
+          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModald">XEM CHI TIẾT <span class="glyphicon glyphicon-eye-open"></span></button>
+  <div class="modal fade" id="myModald" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        
+      </div>
+
+    </div>
+  </div>
+          <a href="form_giohang.html"> <button type="button" class="btn btn-danger">THÊM VÀO <span class="glyphicon glyphicon-shopping-cart" ></span></button> </a>
+          <p></p>
+    </div>
+
+    <div class="col-sm-4" > 
+        <div class="card" style="width:250px;">
+          <div class="card-img-top">
+      <img src="hinhanhxemchitiet/dobo2.jpg" alt="Card One" class="card-img-top" style="width:265px; height:350px; alt="Image" >
+    </div>
+  </div>
+      <p></p>
+      <strong style="padding-right:50px;">Đồ Bộ A2</strong>
+      <p></p>
+          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModala">XEM CHI TIẾT <span class="glyphicon glyphicon-eye-open"></span></button>
+  <div class="modal fade" id="myModala" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+       <div class="modal-content">
+        
+      </div>
+
+    </div>
+  </div>
+          <a href="form_giohang.html"> <button type="button" class="btn btn-danger">THÊM VÀO <span class="glyphicon glyphicon-shopping-cart" ></span></button> </a> 
+          <p></p>
+    </div>
+ <!--    dòng 3 -->
+  <div class="col-sm-4" > 
+   <div class="card-img-top">
+      <img src="hinhanhxemchitiet/dobo3.jpg" alt="Card One" class="card-img-top" style="width:265px; height:350px; alt="Image" >
+    </div>
+      <p></p>
+      <strong style="padding-right:50px;">Đồ Bộ A3</strong>
+      <p></p>
+          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalb">XEM CHI TIẾT <span class="glyphicon glyphicon-eye-open"></span></button>
+  <div class="modal fade" id="myModalb" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+       <div class="modal-content">
+      
+      </div>
+    </div>
+  </div>
+          <a href="form_giohang.html"> <button type="button" class="btn btn-danger">THÊM VÀO <span class="glyphicon glyphicon-shopping-cart" ></span></button> </a> 
+          <p></p>
+    </div>
+    <!-- //dong4 -->
+      <div class="col-sm-4" > 
+        <div class="card" style="width:250px;">
+          <div class="card-img-top">
+      <img src="hinhanhxemchitiet/dobo4.jpg" alt="Card One" class="card-img-top" style="width:265px; height:350px; alt="Image" >
+    </div>
+  </div>
+      <p></p>
+      <strong style="padding-right:50px;">Đồ Bộ A4</strong>
+      <p></p>
+          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModals">XEM CHI TIẾT <span class="glyphicon glyphicon-eye-open"></span></button>
+  <div class="modal fade" id="myModals" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+       <div class="modal-content">
+        
+      </div>
+
+    </div>
+  </div>
+          <a href="form_giohang.html"> <button type="button" class="btn btn-danger">THÊM VÀO <span class="glyphicon glyphicon-shopping-cart" ></span></button> </a> 
+          <p></p>
+    </div>  
+   <!--  dòng 5--> 
+       <div class="col-sm-4" > 
+        <div class="card" style="width:250px;">
+          <div class="card-img-top">
+      <img src="hinhanhxemchitiet/dobo5.jpg" alt="Card One" class="card-img-top" style="width:265px; height:350px; alt="Image" >
+    </div>
+  </div>
+      <p></p>
+      <strong style="padding-right:50px;">Đồ Bộ A5</strong>
+      <p></p>
+          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalv">XEM CHI TIẾT <span class="glyphicon glyphicon-eye-open"></span></button>
+  <div class="modal fade" id="myModalv" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+       <div class="modal-content">
+        
+      </div>
+
+    </div>
+  </div>
+          <a href="form_giohang.html"> <button type="button" class="btn btn-danger">THÊM VÀO <span class="glyphicon glyphicon-shopping-cart" ></span></button> </a> 
+          <p></p>
+    </div>
+ <!--    dòng 6 --> 
+     <div class="col-sm-4" > 
+        <div class="card" style="width:250px;">
+          <div class="card-img-top">
+      <img src="hinhanhxemchitiet/dobo6.jpg" alt="Card One" class="card-img-top" style="width:265px; height:350px; alt="Image" >
+    </div>
+  </div>
+      <p></p>
+      <strong style="padding-right:50px;">Đồ Bộ A6</strong>
+      <p></p>
+          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalm">XEM CHI TIẾT <span class="glyphicon glyphicon-eye-open"></span></button>
+  <div class="modal fade" id="myModalm" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+       <div class="modal-content">
+        
+      </div>
+
+    </div>
+  </div>
+          <a href="form_giohang.html"> <button type="button" class="btn btn-danger">THÊM VÀO <span class="glyphicon glyphicon-shopping-cart" ></span></button> </a> 
+          <p></p>
+    </div>
+  <!--   dòng 6 -->
+   <div class="col-sm-4" > 
+        <div class="card" style="width:250px;">
+          <div class="card-img-top">
+      <img src="hinhanhxemchitiet/dobo7.jpg" alt="Card One" class="card-img-top" style="width:265px; height:350px; alt="Image" >
+    </div>
+  </div>
+      <p></p>
+      <strong style="padding-right:50px;">Đồ Bộ A7</strong>
+      <p></p>
+          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModaln">XEM CHI TIẾT <span class="glyphicon glyphicon-eye-open"></span></button>
+  <div class="modal fade" id="myModaln" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+       <div class="modal-content">
+ 
+      </div>
+
+    </div>
+  </div>
+          <a href="form_giohang.html"> <button type="button" class="btn btn-danger">THÊM VÀO <span class="glyphicon glyphicon-shopping-cart" ></span></button> </a> 
+          <p></p>
+    </div>
+ <!--    dòng kế kế kế
+ -->
+  <div class="col-sm-4" > 
+        <div class="card" style="width:250px;">
+          <div class="card-img-top">
+      <img src="hinhanhxemchitiet/dobo8.jpg" alt="Card One" class="card-img-top" style="width:265px; height:350px; alt="Image" >
+    </div>
+  </div>
+      <p></p>
+      <strong style="padding-right:50px;">Đồ Bộ A8</strong>
+      <p></p>
+          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalt">XEM CHI TIẾT <span class="glyphicon glyphicon-eye-open"></span></button>
+  <div class="modal fade" id="myModalt" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+       <div class="modal-content">
+       
+      </div>
+
+    </div>
+  </div>
+          <a href="form_giohang.html"> <button type="button" class="btn btn-danger">THÊM VÀO <span class="glyphicon glyphicon-shopping-cart" ></span></button> </a> 
+          <p></p>
+    </div>
+<!--     dong 12 -->
+
+
+</div>
+</div>
+<footer class="container-fluid text-center">
+ <!--  <p>Chubby online sales</p> -->  
+  
+  </form>
+</footer>
+
+</body>

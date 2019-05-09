@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px}
+    
+ /*   màu của cột 1*/
+    .sidenav {
+      background-color: #FFFFFF;
+
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    /*footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+
+    }*/
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row content">
+ <!--    Khoảng cách các dòng -->
+    <div class="col-sm-3 sidenav" >
+      <ul class="nav nav-pills nav-stacked">
+     <!-- hình -->
+     <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+<!-- kích thước ảnh cột 1 -->
+   <br><br>
+   <div class="carousel-inner" style="width: 440px;" >
+
+    <div class="item active">
+      <img src="hinhanhxemchitiet/maxi.jpg" alt="" >
+    </div>
+
+    <div class="item">
+      <img src="hinhanhxemchitiet/maxi1.jpg" alt="">
+    </div>
+
+    <div class="item">
+      <img src="hinhanhxemchitiet/maxi2.jpg" alt="">
+    </div>
+  </div>
+     <!-- kết thúc hình -->
+      <!--  <img src="hinhanh/ao2.jpg" alt="nav-pills" class="nav nav-pills" style="width: 300px;height: 300px;"> -->
+       <span class="glyphicon glyphicon-heart" style="color: #FF0000" > Đã thích (33)</span >
+      </ul><br>
+      <div class="input-group" style="width: 440px;" >
+        <input type="text" class="form-control" placeholder="Search Blog..">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+      </div>
+    </div>
+<!-- kích thước cột 2 -->
+    <div class="col-sm-9" style="padding-left: 150px;">
+      <hr>
+      <h2 style="color: #EE0000">Đầm Maxi Siêu Đẹp</h2>
+      <h3></span> Chưa có đánh giá</h3>
+      <h5 style="color: #EE0000"></span> Giá: 350K</h5>
+    <span class="glyphicon glyphicon-calendar"> Hàng đặt trước</span>
+      <br><br>
+      <span class="glyphicon glyphicon-bed"> Miễn phí vận chuyển khi đạt mức giá trị</span>
+      <br><br>
+       <span class="glyphicon glyphicon-menu-right"> Vận chuyển tới: phường Tân Sơn Nhất, quận Tân Bình</span>
+      
+      <h4><small>Phí Vận Chuyển: 0đ-23000đ</small></h4>
+      <hr>
+      <h5>Size S M XL</h5>
+
+
+     <td> Số Lượng  <a href="">  <span class="glyphicon glyphicon-plus"></span>  </a>1    <a href=""><span class="glyphicon glyphicon-minus"></span> </td>
+      <br><br>
+       <button type="submit" class="btn btn-success" style="margin-left: 80px;background-color: #FF9900" > <span class="glyphicon glyphicon-shopping-cart"> Thêm Vào Giỏ Hàng</span></button>
+        <button type="submit" class="btn btn-success" style="margin-left: 80px;padding-right: 90px;background-color: #FF9900"> <span class="glyphicon glyphicon-ok"> Mua Ngay</span></button>
+        <button  type="submit" class="btn btn-success" style="margin-left: 80px;padding-right: 90px;background-color: #FF9900;"> <span class="glyphicon glyphicon-ok"> <a href="form_trang_chu.html">Trở về</a></span></button>
+      <br><br>
+        <img src="hinhanh/logo7.jpg" alt="nav-pills" class="nav nav-pills" style="width: 20px;height: 20px;margin-left: 600px;"> <strong style="font-size: 15px;">Chuppy yên tâm về chất lượng</strong>
+        <br><br>
+         
+    <div class="alert alert-info" style="padding-right: 600px; background-color:#009900;color: #FFFFFF">
+          <div style="width: 1000px;">
+            <p> CHI TIẾT SẢN PHẨM</p>
+    </div>
+    </div>
+
+     
+       <div class="col-sm-3 sidenav" style="background-color: #FFFFFF;">
+      <h4>Thương Hiệu</h4>
+      <br><br>
+      <h4>Chất Liệu</h4>
+      <br><br>
+      <h4>Gởi từ</h4>
+      <br><br>
+
+      <form role="form">
+      </form>
+    </div>
+    <div class="col-sm-9">
+      <h4>Chanel</h4>
+      <br><br>
+      <h4>Vải voan</h4>
+      <br><br>
+      <h4>quận Tân Phú, Tp</h4>
+      <br><br>
+    </div>
+
+   
+<>
+        <div class="alert alert-info" style="padding-right: 800px; background-color:#009900;color: #FFFFFF">
+          <div style="width: 1000px;">
+
+            <p> MÔ TẢ SẢN PHẨM</p>
+          </div>
+        </div>
+
+    <div class="col-sm-9">
+    <h5>Với chất liệu mềm mại, kiểu dáng hợp thời trang, áo sơ mi tay lỡ dáng màu đỏ mang lại cho người mặc cảm giác thật thoải mái, tự tin. Không nên giặt với nước nóng ở nhiệt độ trên 40 độ C Không sử dụng thuốc tẩy hay bột giặt có chất tẩy mạnh. Tránh ngâm quần áo với xà phòng thời gian quá lâu. Nên phơi mặt vải trái và tránh ánh nắng trực tiếp</h5>
+<br><br>
+
+     <div class="alert alert-info" style="padding-right:820px; background-color:#FFFFFF;color: #9933FF">
+          <div style="width: 7000px;">
+    <strong style="font-size: 17px;">Đánh giá: 800</strong>
+    <strong style="font-size: 17px;  padding-left: 90px;">Tỉ lệ phản hồi: 90%</strong>
+    <strong style="font-size: 17px;  padding-left: 110px;">Tham gia: 12 tháng </strong>
+    <br><br>
+    <strong style="font-size: 17px;">Sản phẩm: 20</strong>
+    <strong style="font-size: 17px;  padding-left: 90px;">Thời gian phản hồi: 24h</strong>
+    <strong style="font-size: 17px;  padding-left: 70px;">Lượt theo dõi: 90%</strong>
+    </div>
+    
+  </div>
+  </div>
+
+    </div>
+
+
+  </div>
+
+</div>
+
+<!-- <footer class="container-fluid">
+  <p>Chúng tôi rất hân hạnh phục vụ quí khách</p>
+</footer>
+ -->
+</body>
+</html>

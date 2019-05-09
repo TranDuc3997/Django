@@ -1,0 +1,52 @@
+<div *ngIf="isLoggedIn$ | async as isLoggedIn">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand">Trang Chủ</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Quản Lý Bán Hàng
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Hóa Đơn</a>
+            <a class="dropdown-item" href="#">Chi Tiết Hóa Đơn</a>
+            <a class="dropdown-item" href="#">Hình Thức Thanh Toán</a>
+            <a class="dropdown-item" href="#">Tích Xu</a>
+            <a class="dropdown-item" href="#">Phiếu Giao</a>
+            <a class="dropdown-item" href="#">Khuyến Mãi</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Quản Lý Nhập Xuất
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Phiếu Nhập</a>
+              <a class="dropdown-item" href="#">Chi Tiết Phiếu Nhập</a>
+              <a class="dropdown-item" href="#">Phiếu Nhập Kho</a>
+              <a class="dropdown-item" href="#">Chi Tiết Phiếu Nhập</a>
+              <a class="dropdown-item" href="#">Phiếu Xuất</a>
+              <a class="dropdown-item" href="#">Chi Tiết Phiếu Xuất</a>
+            </div>
+          </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Quản Lý Chung
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/khachhang">Quản Lý Khách Hàng</a>
+            <a class="dropdown-item" href="/nhanvien">Quản Lý Nhân Viên</a>
+            <a class="dropdown-item" href="#">Quản Lý Chức Vụ</a>
+            <a class="dropdown-item" href="#">Quản Lý Hàng Hóa</a>
+            <a class="dropdown-item" href="#">Quản Lý Loại Hàng</a>
+            <a class="dropdown-item" href="/nhacungcap">Quản Lý Nhà Cung Cấp</a>
+            <a class="dropdown-item" (click)=logout() *ngIf="isLoggedIn">Đăng Xuất</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>

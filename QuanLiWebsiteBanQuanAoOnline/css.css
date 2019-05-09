@@ -1,0 +1,29 @@
+.a{
+	width: 1000000px;
+	height: 100px;
+	background: red;
+}
+
+#myCarousel
+{	
+    width: 1089px;
+    height: 200px;
+    margin-left: 262px;
+
+}
+.logo
+{
+	width: 262px;
+	height: 1px;
+}
+/*body
+{
+	background-image: url(hinhanh/a.jpg) no-repeat center center fixed;
+	background-size: cover;
+}*/
+/*.main-section
+{
+	margin: 0 auto;
+	margin-top :300px;
+}
+*/

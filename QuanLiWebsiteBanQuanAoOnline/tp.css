@@ -1,0 +1,16 @@
+.container {
+   width: 90%;
+   border: 1px solid #333;
+   padding: 10px;}
+  #post {
+   	float: left;
+   width: 70%;
+   height: auto;
+  
+}
+#sidebar {
+	float: right;
+ width: 27%;
+ height:auto;
+
+}

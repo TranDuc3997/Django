@@ -1,0 +1,79 @@
+<div class="login">
+  <div class="container-fluid">
+    <div class="row justify-content-center mt-sm-5 mt-4 mb-5">
+      <div class="col-12 col-sm-10 col-md-8 col-lg-7">
+        <p class="text-center text-success pt10" *ngIf="message != ''">
+          {{message}}
+        </p>
+        <div class="row card box-layout bg-white py-sm-5 py-4 mx-0">
+          <div class="col-12">
+            <form class="form-signin" novalidate [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+              <h3 class="w-100 title-line text-center font-weidth-bold mb-sm-5 mb-3"><span>Đăng nhập</span></h3>
+              <p class="text-danger" *ngIf="errorMessage !== ''">
+                {{errorMessage}}
+              </p>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">
+                    <i class="fa fa-user text-primary"></i>
+                  </span>
+                </div>
+                <input type="text" class="form-control" id="email" placeholder="Email" aria-label="Username"
+                  aria-describedby="basic-addon1" formControlName="email">
+                <span class="text-danger txt-error w-100" [innerHTML]="emailErrorMessage"
+                  *ngIf="emailErrorMessage !== ''"></span>
+                <div class="w-100" *ngIf="loginForm.controls.email?.dirty && loginForm.controls.email?.invalid">
+                  <span class="text-danger txt-error" *ngIf="loginForm.controls.email?.errors?.required">
+                   {{getErrorMessage("ERROR_MAIL_VALID")}}
+                  </span>
+                  <span class="text-danger txt-error" *ngIf="loginForm.controls.email?.errors?.maxlength">
+                    {{getErrorMessage("ERROR_MAIL_LENGTH")}}
+                  </span>
+                  <span class="text-danger txt-error" *ngIf="loginForm.controls.email?.errors?.pattern">
+                    {{getErrorMessage("ERROR_MAIL_PATTERN")}}
+                  </span>
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">
+                    <i class="fa fa-lock text-primary"></i>
+                  </span>
+                </div>
+                <input type="password" class="form-control" placeholder="Mật khẩu" aria-label="Username"
+                  aria-describedby="basic-addon1" formControlName="password">
+                <p class="text-danger txt-error" [innerHTML]="passwordErrorMessage" *ngIf="passwordErrorMessage !== ''">
+                </p>
+                <div class="w-100" *ngIf="loginForm.controls.password?.dirty && loginForm.controls.password?.invalid">
+                  <p class="text-danger txt-error" *ngIf="loginForm.controls.password?.errors?.required">
+                    {{getErrorMessage("ERROR_PASS_VALID")}}
+                  </p>
+                  <p class="text-danger txt-error"
+                    *ngIf="loginForm.controls.password?.errors?.minlength || loginForm.controls.password?.errors?.maxlength">
+                    {{getErrorMessage("ERROR_PASS_LENGTH")}}
+                  </p>
+                  <p class="text-danger txt-error" *ngIf="loginForm.controls.password?.errors?.pattern">
+                    {{getErrorMessage("ERROR_PASS_PATTERN")}}
+                  </p>
+                </div>
+              </div>
+              <!-- <div class="form-group">
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="rememberMe" formControlName="rememberMe"
+                      checked>
+                    <label class="custom-control-label" for="rememberMe">Lưu tài khoản</label>
+                  </div>
+                </div> -->
+              <div class="form-group d-flex justify-content-center">
+                <button type="submit" class="btn btn-lg-cus button-primary position-relative btn-block" [disabled]="btnSubmit"> 
+                  <span>Đăng nhập</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

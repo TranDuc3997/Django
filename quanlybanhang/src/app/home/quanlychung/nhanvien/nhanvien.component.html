@@ -1,0 +1,40 @@
+<div class="table-wrapper row">
+    <div class="table-title row">
+            <div class="col-sm-6">
+                <h2>Quản Lý Nhân Viên</h2>
+            </div>
+            <div class="col-sm-6">
+                <a (click)="openCreate()" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> 
+                    <span>Thêm mới nhân viên</span></a>
+            </div>
+    </div>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Mã Số</th>
+                <th>Họ Tên</th>
+                <th>Giới Tính</th>
+                <th>CMND</th>
+                <th>Số điện thoại </th>
+                <th>Địa chỉ </th>
+                <th>Chức Vụ </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody *ngIf="nhanvien">
+            <tr *ngFor="let nv of nhanvien" >
+                <td>{{nv.id}}</td>
+                <td>{{nv.tennv}}</td>
+                <td>{{nv.gioitinh}}</td>
+                <td>{{nv.cmnd}}</td>
+                <td>{{nv.sdtnv}}</td>
+                <td>{{nv.diachinv}}</td>
+                <td>{{nv.tencv}}</td>
+                <td>
+                    <a (click)="openUpdate(nv)" class="btn btn-default"><em class="fa fa-pencil"></em></a> 
+                    <a (click)="openDelete(nv)" class="btn btn-danger"><em class="fa fa-trash-o fa-lg"></em></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

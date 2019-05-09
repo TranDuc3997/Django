@@ -1,0 +1,21 @@
+.container {
+   width: 100%;
+   border: 1px solid #333;
+   padding: 10px;}
+  #post {
+   	float: left;
+   width: 27%;
+   height: auto;
+  
+}
+#sidebar {
+	float: right;
+ width: 70%;
+ height:auto;
+
+}
+.form-control {
+    height: 28px;
+    width: 40px;
+    padding: 3px 12px;
+}
