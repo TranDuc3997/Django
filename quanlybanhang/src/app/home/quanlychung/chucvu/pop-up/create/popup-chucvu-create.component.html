@@ -1,0 +1,14 @@
+    <div class="modal-header">
+        <h4 class="modal-title"> Tạo chức vụ mới </h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <div class="form-row" [formGroup]="createForm">
+            <div class="form-group col-md-12">
+                <label for="inputName">Tên chức vụ </label>
+                <input type="ten" class="form-control" id="inputName" placeholder="Tên chức vụ" 
+                [(ngModel)]="chucvu.tencv" formControlName="ten"> 
+            </div>
+        </div>
+        <button type="button" (click)="onSubmit()" class="btn btn-primary">Xác nhận</button>
+    </div>

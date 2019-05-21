@@ -39,7 +39,13 @@ import { LoaiHangService } from './_services/loaihang.service';
 import { PhieuGiaoHangService } from './_services/phieugiaohang.service';
 import { PhieuNhapService } from './_services/phieunhap.service';
 import { PhieuNhapKhoService } from './_services/phieunhapkho.service';
-import { PhieuXuatKhoService } from './_services/phieuxuatkho.service';
+import { HangHoaComponent } from './home/quanlychung/hanghoa/hanghoa.component';
+import { HangHoaService } from './_services/hanghoa.service';
+import { ChucVuComponent } from './home/quanlychung/chucvu/chucvu.component';
+import { LoaiHangComponent } from './home/quanlychung/loaihang/loaihang.component';
+import { HangHoaCreatePopupComponent } from './home/quanlychung/hanghoa/pop-up/create/popup-hanghoa-create.component';
+import { HangHoaDeletePopupComponent } from './home/quanlychung/hanghoa/pop-up/delete/popup-hanghoa-delete.component';
+import { HangHoaUpdatePopupComponent } from './home/quanlychung/hanghoa/pop-up/update/popup-hanghoa-update.component';
 
 @NgModule({
     imports: [
@@ -48,7 +54,7 @@ import { PhieuXuatKhoService } from './_services/phieuxuatkho.service';
         ReactiveFormsModule,
         HttpClientModule,
         FormsModule,
-        routing
+        routing,
     ],
     declarations: [
         AppComponent,
@@ -67,7 +73,13 @@ import { PhieuXuatKhoService } from './_services/phieuxuatkho.service';
         NhaCungCapComponent,
         NhaCungCapCreatePopupComponent,
         NhaCungCapDeletePopupComponent,
-        NhaCungCapUpdatePopupComponent      
+        NhaCungCapUpdatePopupComponent,
+        HangHoaComponent,
+        HangHoaCreatePopupComponent,
+        HangHoaDeletePopupComponent,
+        HangHoaUpdatePopupComponent,
+        ChucVuComponent,
+        LoaiHangComponent    
     ],
     providers: [
         AuthGuard,
@@ -87,7 +99,7 @@ import { PhieuXuatKhoService } from './_services/phieuxuatkho.service';
         PhieuGiaoHangService,
         PhieuNhapService,
         PhieuNhapKhoService,
-        PhieuXuatKhoService,
+        HangHoaService,
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 
@@ -101,7 +113,10 @@ import { PhieuXuatKhoService } from './_services/phieuxuatkho.service';
         NhanVienUpdatePopupComponent,
         NhaCungCapCreatePopupComponent,
         NhaCungCapDeletePopupComponent,
-        NhaCungCapUpdatePopupComponent  
+        NhaCungCapUpdatePopupComponent,
+        HangHoaCreatePopupComponent,
+        HangHoaDeletePopupComponent,
+        HangHoaUpdatePopupComponent,
     ],
     bootstrap: [AppComponent]
 })

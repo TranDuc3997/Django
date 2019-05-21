@@ -12,6 +12,9 @@ export class KhuyenMaiService {
     getAll() : Observable<any>{
         return this.http.get<any>(`${SERVER_API_URL}/khuyenmais/`);
     }
+    getList() : Observable<any>{
+        return this.http.get<any>(`${SERVER_API_URL}/khuyenmai/list`);
+    }
     getById(id: number) {
         return this.http.get(`${SERVER_API_URL}/khuyenmais/` + id + '/');
     }

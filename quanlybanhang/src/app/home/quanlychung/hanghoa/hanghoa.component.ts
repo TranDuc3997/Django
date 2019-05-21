@@ -5,7 +5,8 @@ import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 
 import { AlertService } from '../../../_services';
 import { HangHoa } from '../../../_models/hanghoa';
-import { HangHoaService } from '../../../_services/hanghoa';
+import { IMAGE_URL } from '../../../app.constants';
+import { HangHoaService } from '../../../_services/hanghoa.service';
 
 
 @Component({
@@ -26,19 +27,20 @@ export class HangHoaComponent implements OnInit {
     }
 
     getListHangHoa() {
-        this.hangHoaService.getAll()
+        this.hangHoaService.getList()
             .pipe(first())
             .subscribe(
                 data => {
                     // console.log(data)
-                    this.hanghoa = data
+                    this.hanghoa = data,
+                    this.parseData()
                 },
                 error => {
                     this.alertService.error(error);
                 });
     }
 
-    openDelete(nhacungcap: HangHoa){
+    openDelete(hanghoa: HangHoa){
         // const modalRef = this.modalService.open(NhaCungCapDeletePopupComponent, {
         //     size: "lg",
         //     centered: true
@@ -67,7 +69,7 @@ export class HangHoaComponent implements OnInit {
         //     })
         //     .catch(() => {});
     }
-    openUpdate(nhacungcap: HangHoa){
+    openUpdate(hanghoa: HangHoa){
         // const modalRef = this.modalService.open(NhaCungCapUpdatePopupComponent, {
         //     size: "lg",
         //     centered: true
@@ -81,5 +83,11 @@ export class HangHoaComponent implements OnInit {
         //         }
         //     })
         //     .catch(() => {});
+    }
+
+    parseData(){
+        this.hanghoa.forEach(item => {
+            item.hinhanh = IMAGE_URL + item.hinhanh;
+        });
     }
 }

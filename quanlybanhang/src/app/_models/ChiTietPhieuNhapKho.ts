@@ -4,4 +4,6 @@ export class ChiTietPhieuNhapKho {
     public ngaynhapkho: Date;
     public phieunhapkho: number;
     public phieunhapkho_id: number;
+    public hanghoa: number;
+    public hanghoa_id: number;
 }

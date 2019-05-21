@@ -8,4 +8,5 @@ export class HangHoa {
     public hinhanh: string;
     public loaihang: number;
     public loaihang_id: number;
+    public ngaymoban: number;
 }

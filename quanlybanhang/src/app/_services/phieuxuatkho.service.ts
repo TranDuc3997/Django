@@ -2,10 +2,10 @@ import { SERVER_API_URL } from "../app.constants";
 import { Observable } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { PhieuXuatKho } from "../_models/phieuxuatkho";
+import { PhieuXuat } from "../_models/phieuxuatkho";
 
 @Injectable()
-export class PhieuXuatKhoService {
+export class PhieuXuatService {
     constructor
     (private http: HttpClient){ }
 
@@ -16,11 +16,11 @@ export class PhieuXuatKhoService {
         return this.http.get(`${SERVER_API_URL}/phieuxuatkhos/` + id + '/');
     }
 
-    create(phieuxuatkho: PhieuXuatKho) {
+    create(phieuxuatkho: PhieuXuat) {
         return this.http.post<any>(`${SERVER_API_URL}/phieuxuatkhos/`,phieuxuatkho);
     }
 
-    update(phieuxuatkho: PhieuXuatKho) {
+    update(phieuxuatkho: PhieuXuat) {
         return this.http.put(`${SERVER_API_URL}/phieuxuatkhos/` + phieuxuatkho.id + '/', phieuxuatkho ) ;
     }
 

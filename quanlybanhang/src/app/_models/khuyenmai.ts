@@ -2,6 +2,9 @@ export class KhuyenMai {
     id: number;
     ngaybd: Date;
     ngaykt: Date;
-    tenkm: string;
-    giamgia: number;
+    giagiam: number;
+    tenhang: string;
+    hanghoa_id: string;
+    dongia: string;
+    hinhanh: string;
 }

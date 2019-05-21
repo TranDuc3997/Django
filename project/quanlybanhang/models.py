@@ -1,6 +1,5 @@
 
 from django.db import models
-
 class LoaiHang(models.Model):
     tenloai = models.CharField(max_length = 100, null= True)
 
@@ -11,20 +10,8 @@ class LoaiHang(models.Model):
     def __unicode__(self):
         return '%s' %(self.tenloai)
         
-class HangHoa(models.Model):
-    tenhang = models.CharField(max_length = 50)
-    dongia  = models.FloatField(null = True)
-    tinhtrang = models.IntegerField(null = True)
-    mota = models.CharField(max_length = 200, null = True)
-    soluong = models.IntegerField(null = True)
-    hinhanh = models.CharField(max_length = 200, null = True)
-    loaihang = models.ForeignKey(LoaiHang, on_delete=models.DO_NOTHING)
-
-    class Meta:
-        verbose_name = "HangHoa"
-        verbose_name_plural = "HangHoas" 
-
 class TichXu(models.Model):
+    ngaybatdau = models.DateField(null = True)
     ngayketthuc = models.DateField(null = True)
     tile = models.FloatField(null = True)
 
@@ -37,7 +24,7 @@ class KhachHang(models.Model):
     diachikh = models.CharField(max_length= 100, null = True)
     sdtkh = models.CharField(max_length = 13)
     danhgia = models.CharField(max_length = 50)
-    tendangnhap = models.CharField(max_length =50)
+    tendangnhap = models.CharField(max_length =50, unique=True)
     matkhau = models.CharField(max_length = 50)
     tichxu  = models.ForeignKey(TichXu, on_delete=models.DO_NOTHING)
 
@@ -76,11 +63,26 @@ class KhuyenMai(models.Model):
     ngaybd = models.DateField(null = True)
     ngaykt = models.DateField(null = True)
     tenkm = models.CharField(max_length = 50, null= True)
-    giamgia = models.FloatField(null = True)
-
+    giagiam = models.FloatField(null = True)
+    noidungkm = models.CharField(max_length = 100000, null= True)
+    hinhanh = models.CharField(max_length = 100000)
     class Meta:
         verbose_name = "KhuyenMai"
-        verbose_name_plural = "KhuyenMais" 
+        verbose_name_plural = "KhuyenMais"
+
+class HangHoa(models.Model):
+    tenhang = models.CharField(max_length = 50)
+    dongia  = models.FloatField(null = True)
+    tinhtrang = models.IntegerField(null = True)
+    mota = models.CharField(max_length = 200, null = True)
+    soluong = models.IntegerField(null = True)
+    hinhanh = models.CharField(max_length = 2000, null = True)
+    ngaymoban = models.DateField(null = True)
+    loaihang = models.ForeignKey(LoaiHang, on_delete=models.DO_NOTHING)
+    khuyenmai = models.ForeignKey(KhuyenMai, on_delete= models.DO_NOTHING, null = True, blank = True)
+    class Meta:
+        verbose_name = "HangHoa"
+        verbose_name_plural = "HangHoas" 
 
 class NhaCungCap(models.Model):
     tenncc = models.CharField(max_length = 50, null = True)
@@ -116,7 +118,9 @@ class ChiTietPhieuNhap(models.Model):
 class PhieuNhapKho(models.Model):
     tenphieunhap = models.CharField(max_length = 50)
     nhanvien = models.ForeignKey(NhanVien, on_delete= models.DO_NOTHING)
-
+    nhacungcap = models.ForeignKey(NhaCungCap, on_delete= models.DO_NOTHING)
+    ngaynhap = models.DateField(null = True)
+    tonggiatri = models.FloatField(null = True)
     class Meta:
         verbose_name = "PhieuNhapKho"
         verbose_name_plural = "PhieuNhapKhos" 
@@ -125,16 +129,18 @@ class ChiTietPhieuNhapKho(models.Model):
     soluong = models.IntegerField(null = True)
     ngaynhapkho = models.DateField(null = True)
     phieunhapkho = models.ForeignKey(PhieuNhapKho, on_delete= models.DO_NOTHING)
-
+    hanghoa = models.ForeignKey(HangHoa, on_delete= models.DO_NOTHING)
     class Meta:
         verbose_name = "ChiTietPhieuNhapKho"
         verbose_name_plural = "ChiTietPhieuNhapKhos" 
 
 class PhieuXuatKho(models.Model):
-    tenphieuxuat = models.CharField(max_length= 50)
     ngayxuatkho = models.DateField(null = True)
     tinhtranghang = models.CharField(max_length= 100)
-    nhanvien = models.ForeignKey(NhanVien, on_delete= models.DO_NOTHING)
+    nhanviennh = models.IntegerField(null = True)
+    nhanvienlp = models.IntegerField(null = True)
+    nhanvienxn = models.IntegerField(null = True)
+    nhanviengh = models.IntegerField(null = True)
 
     class Meta:
         verbose_name = "PhieuXuatKho"
@@ -167,7 +173,8 @@ class ChiTietHoaDon(models.Model):
 
 class PhieuGiaoHang(models.Model):
     thoigiangiao = models.DateField(null = True)
-    nhanvien = models.ForeignKey(NhanVien, on_delete= models.DO_NOTHING)
+    nhanviengh = models.IntegerField(null = True)
+    nhanvienlp = models.IntegerField(null = True)
     khachhang = models.ForeignKey(KhachHang, on_delete= models.DO_NOTHING)
     hinhthuc = models.ForeignKey(HinhThucThanhToan, on_delete= models.DO_NOTHING)
 
@@ -195,10 +202,29 @@ class ViewHangHoa(models.Model):
     tinhtrang = models.IntegerField(null = True)
     mota = models.CharField(max_length = 200, null = True)
     soluong = models.IntegerField(null = True)
-    hinhanh = models.CharField(max_length = 200, null = True)
+    hinhanh = models.CharField(max_length = 2000, null = True)
     loaihang_id = models.IntegerField(null = True)
     tenloai = models.CharField(max_length = 100, null= True)
-
+    ngaymoban = models.DateField(null = True)
+    khuyenmai = models.ForeignKey(KhuyenMai, on_delete= models.DO_NOTHING, null = True, blank = True)
     class Meta:
         managed = False
         db_table = 'viewhanghoa'
+
+class ViewKhuyenMai(models.Model):
+    ngaybd = models.DateField(null = True)
+    ngaykt = models.DateField(null = True)
+    giagiam = models.FloatField(null = True)
+    tenhang = models.CharField(max_length = 50)
+    hinhanh = models.CharField(max_length = 100000)
+    hanghoa_id = models.IntegerField(null = True)
+    dongia = models.FloatField(null= True)
+    
+    class Meta:
+        managed = False
+        db_table = 'viewkhuyenmai'
+
+class File(models.Model):
+    file = models.FileField(blank=False, null=False)
+    def __str__(self):
+        return self.file.name

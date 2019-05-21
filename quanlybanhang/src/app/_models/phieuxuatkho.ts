@@ -1,8 +1,13 @@
-export class PhieuXuatKho {
+export class PhieuXuat {
     public id: number;
-    public tenphieuxuat: string;
     public ngayxuatkho: Date;
     public tinhtranghang: string;
-    public nhanvien: number;
-    public nhanvien_id: number;
+    public nhanviennh: number;
+    public nhanviennh_id: number;
+    public nhanvienlp: number;
+    public nhanvienlp_id: number;
+    public nhanvienxn: number;
+    public nhanvienxn_id: number;
+    public nhanviengh: number;
+    public nhanviengh_id: number;
 }
