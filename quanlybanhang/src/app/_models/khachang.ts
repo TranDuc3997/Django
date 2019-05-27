@@ -7,4 +7,5 @@ export class KhachHang {
     public diachikh: string;
     public tichxu: number;
     public tichxu_id: number;
+    public danhgia: string;
 }

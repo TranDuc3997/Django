@@ -3,7 +3,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true" (click)="clear()">&times;</button>
     </div>
     <div class="modal-body">
-        <div class="form-row" [formGroup]="createForm">
+        <div class="form-row" [formGroup]="updateForm">
             <div class="form-group col-md-12">
                 <label for="inpuid">ID Nhân Viên </label>
                 <input type="ten" class="form-control" id="inputid" value={{nhanvien.id}} readonly>
@@ -34,9 +34,10 @@
                     [(ngModel)]="nhanvien.sdtnv" formControlName="sdt">
             </div>
             <div class="form-group col-md-6">
-                <label for="inputPhone">Giới tính</label>
-                <select class="form-control" name="selected" id="listItem" [(ngModel)]="nhanvien.gioitinh">
-                    <option *ngFor="let item of listItems " [value]="item.id">
+                <label for="listex">Giới tính</label>
+                <select class="form-control" name="selected" (change)="changeSelect($event)" id="listsex"
+                    formControlName="listsex" [(ngModel)]="nhanvien.gioitinh">
+                    <option *ngFor="let item of listItem " [value]="item.value">
                         {{item.text}}
                     </option>
                 </select>
@@ -45,7 +46,7 @@
         <div class="form-row">
             <div class="form-group col-md-8" *ngIf="chucvus">
                 <label for="listtichxu">Danh sách chức vụ: </label>
-                <select class="form-control" name="selected" id="listchucvu" [(ngModel)]="nhanvien.chucvu_id">
+                <select class="form-control" name="selected" id="listchucvu" [(ngModel)]="nhanvien.chucvu">
                     <option *ngFor="let cv of chucvus" [value]="cv.id">
                         {{cv.tencv}}
                     </option>

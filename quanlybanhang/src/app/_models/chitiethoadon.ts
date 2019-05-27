@@ -1,6 +1,7 @@
 export class ChiTietHoaDon {
     public id: number;
     public soluong: number;
+    public giagiam: number;
     public dongia: number;
     public thanhtien: number;
     public giamgia: number;

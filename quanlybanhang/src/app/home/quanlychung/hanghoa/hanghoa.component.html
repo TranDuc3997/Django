@@ -1,11 +1,12 @@
 <div class="table-wrapper row">
     <div class="table-title row">
-            <div class="col-sm-6">
-                <h2>Quản lý hàng hóa</h2>
-            </div>
-            <div class="col-sm-6">
-                <a (click)="openCreate()" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Thêm mới hàng hóa</span></a>
-            </div>
+        <div class="col-sm-6">
+            <h2>Quản lý hàng hóa</h2>
+        </div>
+        <div class="col-sm-6">
+            <a (click)="openCreate()" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i>
+                <span>Thêm mới hàng hóa</span></a>
+        </div>
     </div>
     <table class="table table-striped table-hover">
         <thead>
@@ -13,26 +14,27 @@
                 <th>Mã Số</th>
                 <th>Tên sản phẩm</th>
                 <th>Số lượng</th>
-                <th>Giá bán	Nhà sản xuất</th>
+                <th>Nhà sản xuất</th>
+                <th>Giá bán</th>
                 <th>Mô tả</th>
                 <th>Ảnh</th>
                 <th></th>
-					
+
             </tr>
         </thead>
         <tbody *ngIf="hanghoa">
-            <tr *ngFor="let item of hanghoa" >
+            <tr *ngFor="let item of hanghoa">
                 <td>{{item.id}}</td>
                 <td>{{item.tenhang}}</td>
                 <td>{{item.soluong}}</td>
+                <td>{{item.tenncc}}</td>
                 <td>{{item.dongia}}</td>
                 <td>{{item.mota}}</td>
                 <td>
-                    <img src="{{item.hinhanh}}" class="rounded float-right" 
-                    alt="{{item.tenhang}}">
+                    <img src="{{item.hinhanh}}" class="rounded float-right" alt="{{item.tenhang}}">
                 </td>
                 <td>
-                    <a (click)="openUpdate(item)" class="btn btn-default"><em class="fa fa-pencil"></em></a> 
+                    <a (click)="openUpdate(item)" class="btn btn-default"><em class="fa fa-pencil"></em></a>
                     <a (click)="openDelete(item)" class="btn btn-danger"><em class="fa fa-trash-o fa-lg"></em></a>
                 </td>
             </tr>

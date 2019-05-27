@@ -1,25 +1,29 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit, OnDestroy } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
 
-import { NgbActiveModal, NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import {
+  NgbActiveModal,
+  NgbModal,
+  NgbModalRef
+} from "@ng-bootstrap/ng-bootstrap";
 
-import { first } from 'rxjs/operators';
-import { AlertComponent } from '../../../../../_directives';
-import { AlertService, TichXuService } from '../../../../../_services';
-import { FormGroup, Validators, FormControl } from '@angular/forms';
-import { PatternConstant } from '../../../../../constant/pattern.constants';
-import { create } from 'domain';
-import { NhanVien } from '../../../../../_models/nhanvien';
-import { ChucVu } from '../../../../../_models/chucvu';
-import { ChucVuService } from '../../../../../_services/chucvu.service';
-import { NhanVienService } from '../../nhanvien.service';
+import { first } from "rxjs/operators";
+import { AlertComponent } from "../../../../../_directives";
+import { AlertService, TichXuService } from "../../../../../_services";
+import { FormGroup, Validators, FormControl } from "@angular/forms";
+import { PatternConstant } from "../../../../../constant/pattern.constants";
+import { create } from "domain";
+import { NhanVien } from "../../../../../_models/nhanvien";
+import { ChucVu } from "../../../../../_models/chucvu";
+import { ChucVuService } from "../../../../../_services/chucvu.service";
+import { NhanVienService } from "../../nhanvien.service";
 interface Sex {
-  text: string,
-  value: number
+  text: string;
+  value: number;
 }
 @Component({
-  selector: 'nhanvien-create',
-  templateUrl: './popup-nhanvien-create.component.html'
+  selector: "nhanvien-create",
+  templateUrl: "./popup-nhanvien-create.component.html"
 })
 export class NhanVienCreatePopupComponent implements OnInit {
   flagCreate = false;
@@ -27,7 +31,7 @@ export class NhanVienCreatePopupComponent implements OnInit {
   chucvus: ChucVu[];
   createForm: FormGroup;
 
-  public listItems: Array<Sex> = [
+  public listItem: Array<Sex> = [
     { text: "Nam", value: 1 },
     { text: "Nữ", value: 2 },
     { text: "Khác", value: 3 }
@@ -37,51 +41,60 @@ export class NhanVienCreatePopupComponent implements OnInit {
     private nhanVienService: NhanVienService,
     private alertService: AlertService,
     private chucVuService: ChucVuService
-  ) { }
+  ) {}
   ngOnInit(): void {
     this.createForm = new FormGroup({
-      email: new FormControl('', [
+      email: new FormControl("", [
         Validators.required,
         Validators.maxLength(256),
         Validators.pattern(PatternConstant.PATTERN_EMAIL)
       ]),
-      password: new FormControl('', [
+      cmnd: new FormControl("", [
         Validators.required,
-        Validators.minLength(6),
-        Validators.maxLength(128),
-        Validators.pattern(PatternConstant.PATTERN_PASSWORD)
+        Validators.minLength(10),
+        Validators.maxLength(10),
+        Validators.pattern(PatternConstant.PATTERN_NUMBER_ONLY)
       ]),
-      diachi: new FormControl('', [Validators.required]),
-      ten: new FormControl('', [Validators.required]),
-      sdt: new FormControl('', [Validators.required]),
+      diachi: new FormControl("", [Validators.required]),
+      ten: new FormControl("", [Validators.required]),
+      sdt: new FormControl("", [Validators.required]),
+      listsex: new FormControl("", [Validators.required])
     });
     this.getChucVu();
   }
 
   getChucVu() {
-    this.chucVuService.getAll()
+    this.chucVuService
+      .getAll()
       .pipe(first())
       .subscribe(
         data => {
-          this.chucvus = data
+          this.chucvus = data;
         },
         error => {
           this.alertService.error(error);
-        });
+        }
+      );
   }
   createNhanVien() {
-    this.nhanVienService.create(this.nhanvien).pipe(first())
+    this.nhanVienService
+      .create(this.nhanvien)
+      .pipe(first())
       .subscribe(
         data => {
           this.flagCreate = true;
-          this.clear()
+          this.clear();
         },
         error => {
           this.alertService.error(error);
-        });
+        }
+      );
   }
-  onSubmit(){
+  onSubmit() {
     this.createNhanVien();
+  }
+  changeSelect(event: any) {
+    this.nhanvien.gioitinh = event.target.value;
   }
   clear() {
     this.activeModal.dismiss({

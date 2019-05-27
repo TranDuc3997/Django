@@ -1,58 +1,62 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit, OnDestroy } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
 
-import { NgbActiveModal, NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import {
+  NgbActiveModal,
+  NgbModal,
+  NgbModalRef
+} from "@ng-bootstrap/ng-bootstrap";
 
-import { first } from 'rxjs/operators';
-import { FormGroup, Validators, FormControl } from '@angular/forms';
-import { create } from 'domain';
+import { first } from "rxjs/operators";
+import { FormGroup, Validators, FormControl } from "@angular/forms";
+import { create } from "domain";
+import { TichXu } from "../../../../../_models/tichxu";
+import { TichXuService, AlertService } from "../../../../../_services";
+import { PatternConstant } from "../../../../../constant/pattern.constants";
+import { ParseConstant } from "../../../../../ultil/parse";
 
 @Component({
-  selector: 'xx-create',
-  templateUrl: './popup-xx-create.component.html'
+  selector: "tichxu-create",
+  templateUrl: "./popup-tichxu-create.component.html"
 })
-export class XXXCreatePopupComponent implements OnInit {
+export class TichXuCreatePopupComponent implements OnInit {
   flagCreate = false;
-  xx = new XXX();
+  tichxu = new TichXu();
+  abc: Date;
   createForm: FormGroup;
   constructor(
     public activeModal: NgbActiveModal,
-    private xxService: XXXService,
-    private alertService: AlertService,
-  ) { }
+    private tichxuService: TichXuService,
+    private alertService: AlertService
+  ) {}
   ngOnInit(): void {
     this.createForm = new FormGroup({
-      email: new FormControl('', [
-        Validators.required,
-        Validators.maxLength(256),
-        Validators.pattern(PatternConstant.PATTERN_EMAIL)
-      ]),
-      password: new FormControl('', [
-        Validators.required,
-        Validators.minLength(6),
-        Validators.maxLength(128),
-        Validators.pattern(PatternConstant.PATTERN_PASSWORD)
-      ]),
-      diachi: new FormControl('', [Validators.required]),
-      ten: new FormControl('', [Validators.required]),
-      sdt: new FormControl('', [Validators.required]),
-      danhgia: new FormControl('', [Validators.required]),
+      ngaybd: new FormControl("", [Validators.required]),
+      ngaykt: new FormControl("", [Validators.required]),
+      tile: new FormControl("", [Validators.required])
     });
   }
 
-  createXXX() {
-    this.xxService.create(this.xx).pipe(first())
+  createTichXu() {
+    this.tichxuService
+      .create(this.tichxu)
+      .pipe(first())
       .subscribe(
         data => {
           this.flagCreate = true;
-          this.clear()
+          this.clear();
         },
         error => {
           this.alertService.error(error);
-        });
+        }
+      );
   }
-  onSubmit(){
-    this.createXXX();
+  onSubmit() {
+    this.tichxu.ngaybatdau = ParseConstant.parseToDate(this.tichxu.ngaybatdau);
+    this.tichxu.ngayketthuc = ParseConstant.parseToDate(
+      this.tichxu.ngayketthuc
+    );
+    this.createTichXu();
   }
   clear() {
     this.activeModal.dismiss({

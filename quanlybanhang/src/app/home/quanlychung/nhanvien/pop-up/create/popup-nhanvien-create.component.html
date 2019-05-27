@@ -6,44 +6,45 @@
         <div class="form-row" [formGroup]="createForm">
             <div class="form-group col-md-12">
                 <label for="inputName">Tên Nhân Viên </label>
-                <input type="ten" class="form-control" id="inputName" placeholder="Tên Nhân Viên" 
-                [(ngModel)]="nhanvien.tennv" formControlName="ten"> 
+                <input type="ten" class="form-control" id="inputName" placeholder="Tên Nhân Viên"
+                    [(ngModel)]="nhanvien.tennv" formControlName="ten">
             </div>
             <div class="form-group col-md-6">
                 <label for="inputEmail">Email</label>
                 <input type="email" class="form-control" id="inputEmail" placeholder="Email"
-                [(ngModel)]="nhanvien.email" formControlName="email">
+                    [(ngModel)]="nhanvien.email" formControlName="email">
             </div>
             <div class="form-group col-md-6">
                 <label for="inputPassword">Chứng minh nhân dân</label>
-                <input type="text" class="form-control" id="inputPassword" placeholder="Chứng minh nhân dân"
-                [(ngModel)]="nhanvien.cmnd" formControlName="password">
+                <input type="cmnd" class="form-control" id="inputPassword" placeholder="Chứng minh nhân dân"
+                    [(ngModel)]="nhanvien.cmnd" formControlName="cmnd">
             </div>
             <div class="form-group col-md-12">
                 <label for="inputAddress">Địa chỉ</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="Địa chỉ khách hàng"
-                [(ngModel)]="nhanvien.diachinv" formControlName="diachi">
+                <input type="diachi" class="form-control" id="inputAddress" placeholder="Địa chỉ khách hàng"
+                    [(ngModel)]="nhanvien.diachinv" formControlName="diachi">
             </div>
             <div class="form-group col-md-6">
-                    <label for="inputPhone">Số điện thoại</label>
-                    <input type="text" class="form-control" id="inputPhone" placeholder="Số điện thoại"
+                <label for="inputPhone">Số điện thoại</label>
+                <input type="sdt" class=" form-control" id="inputPhone" placeholder="Số điện thoại"
                     [(ngModel)]="nhanvien.sdtnv" formControlName="sdt">
             </div>
             <div class="form-group col-md-6">
-                <label for="inputPhone">Giới tính</label>
-                <select class="form-control" name="selected" id="listItem" [(ngModel)]="nhanvien.gioitinh">
-                    <option *ngFor="let item of listItems " [value]="item.id">
-                     {{item.text}}
+                <label for="gioitinh">Giới tính</label>
+                <select class="form-control" name="selected" (change)="changeSelect($event)" id="gioitinh"
+                    [(ngModel)]="nhanvien.gioitinh" formControlName="listsex">
+                    <option *ngFor="let item of listItem " [value]="item.value">
+                        {{item.text}}
                     </option>
                 </select>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-8" *ngIf="chucvus">
-                <label for="listtichxu">Danh sách chức vụ: </label>
-                <select class="form-control" name="selected" id="lischucvu" [(ngModel)]="nhanvien.chucvu">
+                <label for="listchucvu">Danh sách chức vụ: </label>
+                <select class="form-control" name="selected" id="listchucvu" [(ngModel)]="nhanvien.chucvu">
                     <option *ngFor="let cv of chucvus" [value]="cv.id">
-                     {{cv.tencv}}
+                        {{cv.tencv}}
                     </option>
                 </select>
             </div>

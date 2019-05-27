@@ -1,6 +1,8 @@
 export class TichXu {
-    id: number;
-    ngayketthuc: string;
-    ngaybatdau: string;
-    tile: number
+  id: number;
+  ngayketthuc: any;
+  ngaybatdau: any;
+  tile: number;
+  ngayketthuctemp: any;
+  ngaybatdautemp: any;
 }

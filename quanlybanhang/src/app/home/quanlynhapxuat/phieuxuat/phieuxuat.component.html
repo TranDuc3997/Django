@@ -1,33 +1,36 @@
 <div class="table-wrapper row">
     <div class="table-title row">
             <div class="col-sm-6">
-                <h2>Quản lý nhà cung cấp</h2>
+                <h2>Quản lý Phiếu Xuất </h2>
             </div>
             <div class="col-sm-6">
-                <a (click)="openCreate()" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Thêm mới nhà cung cấp</span></a>
+                <a (click)="openCreate()" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Thêm mới phiếu xuất</span></a>
             </div>
     </div>
     <table class="table table-striped table-hover">
         <thead>
             <tr>
                 <th>Mã Số</th>
-                <th>Tên nhà cung cấp</th>
-                <th>Email</th>
-                <th>Số điện thoại</th>
-                <th>Địa chỉ</th>
+                <th>Ngày Xuất Kho</th>
+                <th>Tình Trạng Hàng</th>
+                <th>Nhân Viên Nhận Hàng</th>
+                <th>Nhân Viên Lập Phiếu</th>
+                <th>Nhân Viên Xác Nhận</th>
+                <th>Nhân Viên Giao Hàng</th>
                 <th></th>
             </tr>
         </thead>
-        <tbody *ngIf="nhacungcap">
-            <tr *ngFor="let ncc of nhacungcap" >
-                <td>{{ncc.id}}</td>
-                <td>{{ncc.tenncc}}</td>
-                <td>{{ncc.email}}</td>
-                <td>{{ncc.sdtncc}}</td>
-                <td>{{ncc.diachincc}}</td>
+        <tbody *ngIf="phieuxuat">
+            <tr *ngFor="let px of phieuxuat" >
+                <td>{{px.id}}</td>
+                <td>{{px.ngayxuatkho}}</td>
+                <td>{{px.nhanviennh}}</td>
+                <td>{{px.nhanvienlp}}</td>
+                <td>{{px.xn}}</td>
+                <td>{{px.gh}}</td>
                 <td>
-                    <a (click)="openUpdate(ncc)" class="btn btn-default"><em class="fa fa-pencil"></em></a> 
-                    <a (click)="openDelete(ncc)" class="btn btn-danger"><em class="fa fa-trash-o fa-lg"></em></a>
+                    <a (click)="openUpdate(px)" class="btn btn-default"><em class="fa fa-pencil"></em></a> 
+                    <a (click)="openDelete(px)" class="btn btn-danger"><em class="fa fa-trash-o fa-lg"></em></a>
                 </td>
             </tr>
         </tbody>

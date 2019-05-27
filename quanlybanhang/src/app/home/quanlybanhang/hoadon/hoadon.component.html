@@ -1,33 +1,36 @@
 <div class="table-wrapper row">
     <div class="table-title row">
             <div class="col-sm-6">
-                <h2>Quản lý nhà cung cấp</h2>
+                <h2>Quản Lý Hóa Đơn</h2>
             </div>
             <div class="col-sm-6">
-                <a (click)="openCreate()" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Thêm mới nhà cung cấp</span></a>
+                <a (click)="openCreate()" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Thêm mới hóa đơn</span></a>
             </div>
     </div>
     <table class="table table-striped table-hover">
         <thead>
             <tr>
-                <th>Mã Số</th>
-                <th>Tên nhà cung cấp</th>
-                <th>Email</th>
-                <th>Số điện thoại</th>
-                <th>Địa chỉ</th>
-                <th></th>
+                <th>Mã Hóa Đơn</th>
+                <th>Ngày Lập Hóa Đơn</th>
+                <th>Ngày Giao</th>
+                <th>Tổng Tiền</th>
+                <th>Tiền Giảm Tích Xu</th>
+                <th>Mã Nhân Viên</th>
+                <th>Mã Khách Hàng</th>
             </tr>
         </thead>
-        <tbody *ngIf="nhacungcap">
-            <tr *ngFor="let ncc of nhacungcap" >
-                <td>{{ncc.id}}</td>
-                <td>{{ncc.tenncc}}</td>
-                <td>{{ncc.email}}</td>
-                <td>{{ncc.sdtncc}}</td>
-                <td>{{ncc.diachincc}}</td>
+        <tbody *ngIf="hoadon">
+            <tr *ngFor="let hd of hoadon" >
+                <td>{{hd.id}}</td>
+                <td>{{hd.ngaylaphd</td>
+                <td>{{hd.ngaygiao}}</td>
+                <td>{{hd.tongtien}}</td>
+                <td>{{hd.tiengiamtx}}</td>
+                <td>{{nv.id}}</td>
+                <td>{{kh.id}}</td>
                 <td>
-                    <a (click)="openUpdate(ncc)" class="btn btn-default"><em class="fa fa-pencil"></em></a> 
-                    <a (click)="openDelete(ncc)" class="btn btn-danger"><em class="fa fa-trash-o fa-lg"></em></a>
+                    <a (click)="openUpdate(hd)" class="btn btn-default"><em class="fa fa-pencil"></em></a> 
+                    <a (click)="openDelete(hd)" class="btn btn-danger"><em class="fa fa-trash-o fa-lg"></em></a>
                 </td>
             </tr>
         </tbody>

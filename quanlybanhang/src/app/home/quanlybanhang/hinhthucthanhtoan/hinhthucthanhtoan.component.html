@@ -1,33 +1,27 @@
 <div class="table-wrapper row">
     <div class="table-title row">
             <div class="col-sm-6">
-                <h2>Quản lý nhà cung cấp</h2>
+                <h2>Quản Lý Hình Thức Thanh Toán</h2>
             </div>
             <div class="col-sm-6">
-                <a (click)="openCreate()" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Thêm mới nhà cung cấp</span></a>
+                <a (click)="openCreate()" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Thêm Mới Hình Thức Thanh Toán </span></a>
             </div>
     </div>
     <table class="table table-striped table-hover">
         <thead>
             <tr>
-                <th>Mã Số</th>
-                <th>Tên nhà cung cấp</th>
-                <th>Email</th>
-                <th>Số điện thoại</th>
-                <th>Địa chỉ</th>
+                <th>Mã Hình Thức</th>
+                <th>Tên Hình Thức Thanh Toán</th>
                 <th></th>
             </tr>
         </thead>
-        <tbody *ngIf="nhacungcap">
-            <tr *ngFor="let ncc of nhacungcap" >
-                <td>{{ncc.id}}</td>
-                <td>{{ncc.tenncc}}</td>
-                <td>{{ncc.email}}</td>
-                <td>{{ncc.sdtncc}}</td>
-                <td>{{ncc.diachincc}}</td>
+        <tbody *ngIf="hinhthucthanhtoan">
+            <tr *ngFor="let hinhthuctt of hinhthucthanhtoan" >
+                <td>{{hinhthuctt.id}}</td>
+                <td>{{hinhthuctt.tenhinhthuctt}}</td>
                 <td>
-                    <a (click)="openUpdate(ncc)" class="btn btn-default"><em class="fa fa-pencil"></em></a> 
-                    <a (click)="openDelete(ncc)" class="btn btn-danger"><em class="fa fa-trash-o fa-lg"></em></a>
+                    <a (click)="openUpdate(hinhthuctt)" class="btn btn-default"><em class="fa fa-pencil"></em></a> 
+                    <a (click)="openDelete(hinhthuctt)" class="btn btn-danger"><em class="fa fa-trash-o fa-lg"></em></a>
                 </td>
             </tr>
         </tbody>

@@ -70,19 +70,6 @@ class KhuyenMai(models.Model):
         verbose_name = "KhuyenMai"
         verbose_name_plural = "KhuyenMais"
 
-class HangHoa(models.Model):
-    tenhang = models.CharField(max_length = 50)
-    dongia  = models.FloatField(null = True)
-    tinhtrang = models.IntegerField(null = True)
-    mota = models.CharField(max_length = 200, null = True)
-    soluong = models.IntegerField(null = True)
-    hinhanh = models.CharField(max_length = 2000, null = True)
-    ngaymoban = models.DateField(null = True)
-    loaihang = models.ForeignKey(LoaiHang, on_delete=models.DO_NOTHING)
-    khuyenmai = models.ForeignKey(KhuyenMai, on_delete= models.DO_NOTHING, null = True, blank = True)
-    class Meta:
-        verbose_name = "HangHoa"
-        verbose_name_plural = "HangHoas" 
 
 class NhaCungCap(models.Model):
     tenncc = models.CharField(max_length = 50, null = True)
@@ -93,6 +80,21 @@ class NhaCungCap(models.Model):
     class Meta:
         verbose_name = "NhaCungCap"
         verbose_name_plural = "NhaCungCaps" 
+
+class HangHoa(models.Model):
+    tenhang = models.CharField(max_length = 50)
+    dongia  = models.FloatField(null = True)
+    tinhtrang = models.IntegerField(null = True)
+    mota = models.CharField(max_length = 200, null = True)
+    soluong = models.IntegerField(null = True)
+    hinhanh = models.CharField(max_length = 2000, null = True)
+    ngaymoban = models.DateField(null = True)
+    loaihang = models.ForeignKey(LoaiHang, on_delete=models.DO_NOTHING)
+    nhacungcap = models.ForeignKey(NhaCungCap,on_delete=models.DO_NOTHING)
+    khuyenmai = models.ForeignKey(KhuyenMai, on_delete= models.DO_NOTHING, null = True, blank = True)
+    class Meta:
+        verbose_name = "HangHoa"
+        verbose_name_plural = "HangHoas" 
 
 class PhieuNhap(models.Model):
     ngaynhap = models.DateField(null = True)
@@ -204,6 +206,7 @@ class ViewHangHoa(models.Model):
     soluong = models.IntegerField(null = True)
     hinhanh = models.CharField(max_length = 2000, null = True)
     loaihang_id = models.IntegerField(null = True)
+    nhacungcap_id = models.IntegerField(null = True)
     tenloai = models.CharField(max_length = 100, null= True)
     ngaymoban = models.DateField(null = True)
     khuyenmai = models.ForeignKey(KhuyenMai, on_delete= models.DO_NOTHING, null = True, blank = True)

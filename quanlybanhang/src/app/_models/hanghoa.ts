@@ -9,4 +9,6 @@ export class HangHoa {
     public loaihang: number;
     public loaihang_id: number;
     public ngaymoban: number;
+    public khuyenmai: number;
+    public khuyenmai_id: number;
 }

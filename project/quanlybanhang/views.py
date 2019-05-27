@@ -105,7 +105,7 @@ class DetailNhanVien(APIView):
 
 class DetailHangHoa(APIView):
     def get(self, request, format=None):
-        view = ViewHangHoa.objects.all().values('id','tenhang','dongia','tinhtrang','mota','soluong','hinhanh','loaihang_id','tenloai')
+        view = ViewHangHoa.objects.all().values('id','tenhang','dongia','tinhtrang','mota','soluong','hinhanh','loaihang_id','khuyenmai_id','nhacungcap_id','tenloai','tenncc')
         response = list(view)
         return JsonResponse(response, safe=False)
 class DetailKhuyenMai(APIView):
@@ -138,7 +138,6 @@ class CustomListSanPham(APIView):
                     FROM quanlybanhang_hanghoa hh, quanlybanhang_loaihang lh
                     WHERE lh.id = hh.loaihang_id '''
         param = []
-        if
         if( request.data['loaihang'] is None):
             sql = ''' SELECT hh.id, hh.tenhang, hh.tinhtrang, hh.mota, hh.soluong, hh.khuyenmai_id, hh.hinhanh, hh.loaihang_id
                     FROM quanlybanhang_hanghoa hh, quanlybanhang_loaihang lh

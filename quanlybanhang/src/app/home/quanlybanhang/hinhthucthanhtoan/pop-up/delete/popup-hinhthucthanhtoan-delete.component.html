@@ -1,14 +1,14 @@
-<div *ngIf="khachhang">
+<div *ngIf="hinhthucthanhtoan">
     <div class="modal-header">
-        <h4 class="modal-title" >Xác nhận xóa </h4>
+        <h4 class="modal-title" >Xác nhận xóa hình thức thanh toán </h4>
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
                 (click)="clear()">&times;</button>
     </div>
     <div class="modal-body">
-        <p >Bạn có muốn xóa khách hàng {{khachhang.id}} - {{khachhang.tenkh}}</p>
+        <p >Bạn có muốn xóa hình thức thanh toán {{hinhthucthanhtoan.id}} - {{hinhthucthanhtoan.tenhinhthuctt}}</p>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal"(click)="clear()">Cancel</button>
-        <button type="button" id="confirmDeleteButton" class="btn btn-danger" (click)="confirmDelete(khachhang.id)">Delete</button>
+        <button type="button" id="confirmDeleteButton" class="btn btn-danger" (click)="confirmDelete(hinhthucthanhtoan.id)">Delete</button>
       </div>
 </div>
