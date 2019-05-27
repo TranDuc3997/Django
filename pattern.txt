@@ -1,0 +1,6 @@
+﻿<div class="form-group col-md-12">
+    <label for="inputName">Ngày Bắt Đầu </label>
+    <input class="form-control" placeholder="yyyy-mm-dd" readonly name="dbd" formControlName="ngaybd" ngbDatepicker #dbd="ngbDatepicker" [(ngModel)]="khuyenmai.ngaybd">
+    <button class="btn btn-outline-secondary calendar" (click)="dbd.toggle()" type="button"> Chọn ngày
+    </button>
+</div>
